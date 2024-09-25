@@ -46,5 +46,25 @@ npm run dev
 
 Once the server is running, open http://localhost:3000 in your browser. You should see the home page where you can upload a PDF file.
 
+# Uploading a PDF and Chatting with it
+
+1. **Upload a PDF**: Drag and drop a PDF file into the provided upload area.
+2. **Interact**: After uploading, you can start asking questions about the content of the PDF. The system will respond based on the document text, powered by OpenAI's language model and Pinecone's vector search for retrieving relevant sections.
+
+# Project Structure
+
+### `app/api/addData/route.ts`
+Handles the file upload, PDF processing, and embedding the document's contents into Pinecone.
+
+### `app/page.tsx`
+The front-end interface that allows users to upload a PDF and interact with it.
+
+### Langchain
+Handles loading, splitting, and embedding the document into chunks.
+
+### Pinecone
+Stores the embeddings of the document chunks and enables fast retrieval of relevant information during a chat.
+
+
 
 
